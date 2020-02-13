@@ -20,8 +20,10 @@ from jobs import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name ="home"),
-    path('login', views.login, name ="login"),
-    path('register', views.register, name ="register"),
+    path('listajuegos/', views.listajuegos, name ="listajuegos"),
+    path('listajuegos/<int:juego_id>', views.detail,name='detail'),
+    path('login/', views.login, name ="login"),
+    path('register/', views.register, name ="register"),
 ]
 
 

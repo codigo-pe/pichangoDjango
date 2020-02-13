@@ -32,8 +32,9 @@ class Cancha(models.Model):
 class Juego(models.Model):
     estado=models.CharField(max_length=100,choices= 
     (('Activo','Activo'),('Realizado','Realizado'), ('Cancelado','Cancelado')))
+    #organizador=models.ForeignKey(Jugador,on_delete=models.CASCADE)
     fecha=models.DateField()
-    hora=models.TimeField(auto_now=True)
+    hora=models.TimeField()
     cancha=models.ForeignKey(Cancha,on_delete=models.CASCADE)
     jugador=models.ManyToManyField(Jugador)
     descripcion=models.TextField(null=True)
